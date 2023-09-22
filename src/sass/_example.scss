@@ -26,3 +26,9 @@
   background-size: cover;
   background-position: center;
 }
+
+.is-hidden {
+  visibility: hidden ;
+  opacity: 0;
+  pointer-events: none;
+}
