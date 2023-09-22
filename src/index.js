@@ -21,11 +21,11 @@ loader.hidden = true;
 error.classList.add('is-hidden');
 catInfo.classList.add('is-hidden');
 
-breedSelect.addEventListener('click', findBreed);
+breedSelect.addEventListener('change', findBreed);
 
 fetchBreeds()
     .then(breeds => 
-renderBreeds(breeds))
+        renderBreeds(breeds))
     .catch(error => {console.log(error);
         Notiflix.Notify.failure(
             'Oops! Something went wrong! Try reloading the page!'
@@ -59,9 +59,8 @@ function findBreed(event){
         Notiflix.Notify.failure(
           'Oops! Something went wrong! Try reloading the page!'
         );
-        error.classList.remove('is-hidden');
-}).finally(() => loader.hidden = true)
-
+        error.classList.remove('is-hidden');})
+    .finally(() => loader.hidden = true)
 }
 
 function renderBreeds(breeds){
@@ -73,9 +72,9 @@ function renderBreeds(breeds){
 
     breedSelect.insertAdjacentHTML('afterbegin', markup);
     
-    // new SlimSelect({
-    //     select: '#single',
-    //   });
+    new SlimSelect({
+        select: '#single',
+      });
 }
 
 function renderCat(cats){
@@ -91,8 +90,6 @@ function renderCat(cats){
     }).join('');
 
     catInfo.insertAdjacentHTML('beforeend', markupCat);
-
-
 }
 
 function clearCats(){
