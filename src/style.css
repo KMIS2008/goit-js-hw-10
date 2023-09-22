@@ -1,10 +1,17 @@
+
 .is-hidden {
     visibility: hidden ;
     opacity: 0;
     pointer-events: none;
   }
 
-  
+  .breed-select {
+    display: block;
+    padding: 15px;
+    max-width: 428px;
+    margin: auto;
+  }
+
   .loader {
     transform: rotateZ(45deg);
     perspective: 1000px;
@@ -27,7 +34,7 @@
       animation: 1s spin linear infinite;
     }
 
-    
+
     .loader:after {
       color: #FF3D00;
       transform: rotateY(70deg);
@@ -79,3 +86,17 @@
       box-shadow: .2em -.2em 0 0 currentcolor;
     }
   }
+
+ .cat-info{
+  display: flex;
+  margin-left: 25px;
+  margin-right: 25px;
+ } 
+
+ .box-img{
+  margin-right: 25px;
+ }
+
+ .text-description{
+  text-align: justify;
+ }

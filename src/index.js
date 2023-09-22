@@ -83,7 +83,7 @@ function renderCat(cats){
         </div>
         <div class="box-info">
         <h1>${cat.breeds[0].name}</h1>
-        <p>${cat.breeds[0].description}</p>
+        <p class="text-description">${cat.breeds[0].description}</p>
         <p><b>Temperament:</b> ${cat.breeds[0].temperament}</p>
         </div>`
     }).join('');
