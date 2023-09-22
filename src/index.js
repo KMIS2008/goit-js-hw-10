@@ -23,8 +23,10 @@ catInfo.classList.add('is-hidden');
 
 breedSelect.addEventListener('click', findBreed);
 
-fetchBreeds().then(breeds => 
-    renderBreeds(breeds)).catch(error => {console.log(error);
+fetchBreeds()
+    .then(breeds => 
+renderBreeds(breeds))
+    .catch(error => {console.log(error);
         Notiflix.Notify.failure(
             'Oops! Something went wrong! Try reloading the page!'
           );
