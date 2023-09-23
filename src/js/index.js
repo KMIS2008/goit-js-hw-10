@@ -1,6 +1,5 @@
 import axios from "axios";
-import { fetchBreeds } from "./cat-api";
-import { fetchCatByBreed } from "./cat-api";
+import { fetchBreeds, fetchCatByBreed } from "./cat-api";
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
@@ -18,20 +17,19 @@ document.body.style.backgroundColor = '#FFEBCD';
 
 
 loader.hidden = true;
-error.classList.add('is-hidden');
 catInfo.classList.add('is-hidden');
 
 breedSelect.addEventListener('change', findBreed);
+breedSelect.classList.remove('is-hidden');
 
 fetchBreeds()
     .then(breeds => 
         renderBreeds(breeds))
-    .catch(error => {console.log(error);
+    .catch(error => 
+
         Notiflix.Notify.failure(
-            'Oops! Something went wrong! Try reloading the page!'
-          );
-          error.classList.remove('is-hidden');
-        });
+            'Oops! Something went wrong! Try reloading the page!')
+        );
 
 function findBreed(event){
     event.preventDefault();
@@ -59,7 +57,7 @@ function findBreed(event){
         Notiflix.Notify.failure(
           'Oops! Something went wrong! Try reloading the page!'
         );
-        error.classList.remove('is-hidden');})
+    })
     .finally(() => loader.hidden = true)
 }
 
